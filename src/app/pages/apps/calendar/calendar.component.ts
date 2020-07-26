@@ -46,6 +46,21 @@ export class CalendarComponent {
         event: CalendarEvent;
     };
     refresh: Subject<any> = new Subject();
+    actions: CalendarEventAction[] = [
+        {
+            label: '<i class="fa fa-fw fa-pencil"></i>',
+            onClick: ({event}: { event: CalendarEvent }): void => {
+                this.handleEvent('Edited', event);
+            }
+        },
+        {
+            label: '<i class="fa fa-fw fa-times"></i>',
+            onClick: ({event}: { event: CalendarEvent }): void => {
+                this.events = this.events.filter(iEvent => iEvent !== event);
+                this.handleEvent('Deleted', event);
+            }
+        }
+    ];
     events: CalendarEvent[] = [
         {
             start: subDays(startOfDay(new Date()), 1),
@@ -84,21 +99,6 @@ export class CalendarComponent {
                 afterEnd: true
             },
             draggable: true
-        }
-    ];
-    actions: CalendarEventAction[] = [
-        {
-            label: '<i class="fa fa-fw fa-pencil"></i>',
-            onClick: ({event}: { event: CalendarEvent }): void => {
-                this.handleEvent('Edited', event);
-            }
-        },
-        {
-            label: '<i class="fa fa-fw fa-times"></i>',
-            onClick: ({event}: { event: CalendarEvent }): void => {
-                this.events = this.events.filter(iEvent => iEvent !== event);
-                this.handleEvent('Deleted', event);
-            }
         }
     ];
     activeDayIsOpen = true;

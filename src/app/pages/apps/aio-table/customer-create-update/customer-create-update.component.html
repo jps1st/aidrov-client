@@ -7,7 +7,7 @@
             fxFlex="auto">{{ form.get('firstName').value + ' ' + form.get('lastName').value }}</h2>
         <h2 *ngIf="!form.get('firstName').value && !form.get('lastName').value"
             class="headline m-0"
-            fxFlex="auto">New Customer</h2>
+            fxFlex="auto">New Citizen</h2>
 
         <button [matMenuTriggerFor]="settingsMenu" class="text-secondary" mat-icon-button type="button">
             <mat-icon [icIcon]="icMoreVert"></mat-icon>
@@ -21,10 +21,24 @@
     <mat-divider class="-mx-6 text-border"></mat-divider>
 
     <mat-dialog-content fxLayout="column">
-        <div class="flex flex-col sm:flex-row">
+        <div class="mt-6 flex-auto" layout-align="center center">
+            <img [src]="" class="avatar h-32 w-32 mx-auto"/>
+            <div style="text-align:center;margin-top: .4em;">
+                <button color="primary" mat-raised-button type="button">Upload Image</button>    
+            </div>
+        </div>
+        <div class="flex flex-col sm:flex-row">          
+            
             <mat-form-field class="mt-6 flex-auto">
                 <mat-label>First Name</mat-label>
                 <input cdkFocusInitial formControlName="firstName" matInput>
+
+                <mat-icon [icIcon]="icPerson" class="mr-3" matPrefix></mat-icon>
+            </mat-form-field>
+
+            <mat-form-field class="sm:mt-6 sm:ml-6 flex-auto">
+                <mat-label>Middle Name</mat-label>
+                <input cdkFocusInitial formControlName="middleName" matInput>
 
                 <mat-icon [icIcon]="icPerson" class="mr-3" matPrefix></mat-icon>
             </mat-form-field>
@@ -38,7 +52,7 @@
         </div>
 
         <mat-form-field class="flex-auto">
-            <mat-label>Street</mat-label>
+            <mat-label>Address</mat-label>
             <input formControlName="street" matInput>
 
             <mat-icon [icIcon]="icEditLocation" class="mr-3" matPrefix></mat-icon>
@@ -46,17 +60,25 @@
 
         <div class="flex flex-col sm:flex-row">
             <mat-form-field class="flex-auto">
-                <mat-label>Zipcode</mat-label>
-                <input formControlName="zipcode" matInput>
+                <mat-label>Gender</mat-label>
+                <mat-select>
+                    <mat-option value="Male">Male</mat-option>
+                    <mat-option value="Female">Female</mat-option>
+                </mat-select>
 
-                <mat-icon [icIcon]="icMyLocation" class="mr-3" matPrefix></mat-icon>
+                <mat-icon [icIcon]="icPerson" class="mr-3" matPrefix></mat-icon>
             </mat-form-field>
 
             <mat-form-field class="sm:ml-6 flex-auto">
-                <mat-label>City</mat-label>
-                <input formControlName="city" matInput>
+                <mat-label>Status</mat-label>
+                <mat-select>
+                    <mat-option value="Single">Single</mat-option>
+                    <mat-option value="Married">Married</mat-option>
+                    <mat-option value="Separated">Separated</mat-option>
+                    <mat-option value="Single Parent">Single Parent</mat-option>
+                </mat-select>
 
-                <mat-icon [icIcon]="icLocationCity" class="mr-3" matPrefix></mat-icon>
+                <mat-icon [icIcon]="icPerson" class="mr-3" matPrefix></mat-icon>
             </mat-form-field>
         </div>
 
@@ -68,9 +90,38 @@
         </mat-form-field>
 
         <mat-form-field class="flex-auto">
-            <mat-label>Notes</mat-label>
-            <textarea formControlName="notes" matInput></textarea>
+            <mat-label>Email</mat-label>
+            <input formControlName="Email" matInput>
+
+            <mat-icon [icIcon]="icPhone" class="mr-3" matPrefix></mat-icon>
         </mat-form-field>
+
+        <div class="flex flex-col sm:flex-row">
+            <mat-form-field class="flex-auto">
+                <mat-label>Birth Date</mat-label>
+                <input matInput  type="date"> 
+
+                <mat-icon [icIcon]="icPerson" class="mr-3" matPrefix></mat-icon>
+            </mat-form-field>
+
+            <mat-form-field class="sm:ml-6 flex-auto">
+                <mat-label>Residence Type</mat-label>
+                <mat-select>
+                    <mat-option value="Single">Digos Resident</mat-option>
+                    <mat-option value="Married">Non Digos Resident</mat-option> 
+                </mat-select>
+
+                <mat-icon [icIcon]="icPerson" class="mr-3" matPrefix></mat-icon>
+            </mat-form-field>
+        </div>
+
+        <mat-form-field class="flex-auto">
+            <mat-label>Proof of Identity</mat-label>
+            <input matInput> 
+
+            <mat-icon [icIcon]="icPerson" class="mr-3" matPrefix></mat-icon>
+        </mat-form-field> 
+        
     </mat-dialog-content>
 
     <mat-dialog-actions align="end">

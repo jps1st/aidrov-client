@@ -47,9 +47,10 @@
             </div>
 
             <div fxLayout="row" fxLayoutAlign="center center">
-                <mat-checkbox class="caption">I accept the <a>terms and conditions.</a></mat-checkbox>
+                <mat-checkbox class="caption" formControlName="termsAccepted">I accept the <a>terms and conditions.</a>
+                </mat-checkbox>
             </div>
-            <button (click)="send()" color="primary" mat-raised-button type="button">
+            <button (click)="send()" [disabled]="!form.valid" color="primary" mat-raised-button type="button">
                 CREATE ACCOUNT
             </button>
             <p class="text-secondary text-center">

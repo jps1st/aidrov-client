@@ -11,6 +11,7 @@ import {MatButtonModule} from '@angular/material/button';
 import {MatTooltipModule} from '@angular/material/tooltip';
 import {MatCheckboxModule} from '@angular/material/checkbox';
 import {IconModule} from '@visurel/iconify-angular';
+import {MatSnackBarModule} from "@angular/material/snack-bar";
 
 
 @NgModule({
@@ -25,7 +26,8 @@ import {IconModule} from '@visurel/iconify-angular';
         MatButtonModule,
         MatTooltipModule,
         MatCheckboxModule,
-        IconModule
+        IconModule,
+        MatSnackBarModule
     ]
 })
 export class RegisterModule {

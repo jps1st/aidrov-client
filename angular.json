@@ -99,7 +99,10 @@
         "serve": {
           "builder": "@angular-builders/custom-webpack:dev-server",
           "options": {
-            "browserTarget": "vex:build"
+            "browserTarget": "vex:build",
+            "port": 4500,
+            "host": "0.0.0.0",
+            "proxyConfig": "proxy.conf.js"
           },
           "configurations": {
             "production": {

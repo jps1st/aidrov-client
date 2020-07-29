@@ -15,7 +15,9 @@ import {MatCheckboxModule} from '@angular/material/checkbox';
 
 
 @NgModule({
-    declarations: [LoginComponent],
+    declarations: [
+        LoginComponent
+    ],
     imports: [
         CommonModule,
         LoginRoutingModule,

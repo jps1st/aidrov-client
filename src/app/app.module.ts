@@ -8,6 +8,8 @@ import {VexModule} from '../@vex/vex.module';
 import {HttpClientModule} from '@angular/common/http';
 import {CustomLayoutModule} from './custom-layout/custom-layout.module';
 import {CitizenModel} from 'aidrov-models';
+import {AuthGuard} from './auth/auth-guard.service';
+import {AuthService} from './auth/auth.service';
 
 @NgModule({
     declarations: [AppComponent],
@@ -21,7 +23,10 @@ import {CitizenModel} from 'aidrov-models';
         VexModule,
         CustomLayoutModule
     ],
-    providers: [],
+    providers: [
+        AuthService,
+        AuthGuard,
+    ],
     bootstrap: [AppComponent]
 })
 export class AppModule {

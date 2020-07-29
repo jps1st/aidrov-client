@@ -2,8 +2,14 @@ import {NgModule} from '@angular/core';
 import {RouterModule} from '@angular/router';
 import {CustomLayoutComponent} from './custom-layout/custom-layout.component';
 import {VexRoutes} from '../@vex/interfaces/vex-route.interface';
+import {AuthGuard} from './auth/auth-guard.service';
 
 const routes: VexRoutes = [
+    {
+        path: '',
+        redirectTo: 'login',
+        pathMatch: 'full',
+    },
     {
         path: 'login',
         loadChildren: () => import('./pages/pages/auth/login/login.module').then(m => m.LoginModule),
@@ -23,6 +29,7 @@ const routes: VexRoutes = [
     {
         path: '',
         component: CustomLayoutComponent,
+        canActivate: [AuthGuard],
         children: [
             {
                 path: 'dashboards/analytics',
@@ -30,7 +37,8 @@ const routes: VexRoutes = [
             },
             {
                 path: '',
-                loadChildren: () => import('./pages/dashboards/dashboard-analytics/dashboard-analytics.module').then(m => m.DashboardAnalyticsModule),
+                loadChildren: () => import('./pages/dashboards/dashboard-analytics/dashboard-analytics.module')
+                    .then(m => m.DashboardAnalyticsModule),
             },
             {
                 path: 'apps',
@@ -152,6 +160,18 @@ const routes: VexRoutes = [
                 loadChildren: () => import('./pages/pages/errors/error-404/error-404.module').then(m => m.Error404Module)
             }
         ]
+    },
+    {
+        path: 'error-500',
+        loadChildren: () => import('./pages/pages/errors/error-500/error-500.module').then(m => m.Error500Module)
+    },
+    {
+        path: 'error-404',
+        loadChildren: () => import('./pages/pages/errors/error-404/error-404.module').then(m => m.Error404Module)
+    },
+    {
+        path: '**',
+        redirectTo: 'error-404',
     }
 ];
 

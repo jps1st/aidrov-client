@@ -5,6 +5,7 @@ import {MatSnackBar} from '@angular/material/snack-bar';
 import icVisibility from '@iconify/icons-ic/twotone-visibility';
 import icVisibilityOff from '@iconify/icons-ic/twotone-visibility-off';
 import {fadeInUp400ms} from '../../../../../@vex/animations/fade-in-up.animation';
+import {AuthService} from '../../../../auth/auth.service';
 
 @Component({
     selector: 'vex-login',
@@ -25,10 +26,12 @@ export class LoginComponent implements OnInit {
     icVisibility = icVisibility;
     icVisibilityOff = icVisibilityOff;
 
-    constructor(private router: Router,
-                private fb: FormBuilder,
-                private cd: ChangeDetectorRef,
-                private snackbar: MatSnackBar
+    constructor(
+        private router: Router,
+        private fb: FormBuilder,
+        private cd: ChangeDetectorRef,
+        private snackbar: MatSnackBar,
+        private authService: AuthService
     ) {
     }
 
@@ -39,11 +42,15 @@ export class LoginComponent implements OnInit {
         });
     }
 
-    send() {
-        this.router.navigate(['/']);
-        this.snackbar.open('Lucky you! Looks like you didn\'t need a password or email address! For a real application we provide validators to prevent this. ;)', 'LOL THANKS', {
-            duration: 10000
-        });
+    async send() {
+        try {
+            const sub = this.form.getRawValue();
+            await this.authService.signinUser(sub.email, sub.password);
+            this.router.navigate(['dashboards/analytics']);
+        } catch (e) {
+            const m = e.error ? e.error : e.message ? e.message : 'An error occurred with login. Pleas try again later.';
+            this.snackbar.open(m, 'OK', {duration: 5000});
+        }
     }
 
     toggleVisibility() {

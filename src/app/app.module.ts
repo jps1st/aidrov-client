@@ -7,6 +7,7 @@ import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 import {VexModule} from '../@vex/vex.module';
 import {HttpClientModule} from '@angular/common/http';
 import {CustomLayoutModule} from './custom-layout/custom-layout.module';
+import {CitizenModel} from 'aidrov-models';
 
 @NgModule({
     declarations: [AppComponent],
@@ -25,3 +26,5 @@ import {CustomLayoutModule} from './custom-layout/custom-layout.module';
 })
 export class AppModule {
 }
+
+console.log(new CitizenModel());

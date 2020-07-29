@@ -13,6 +13,10 @@ import icWork from '@iconify/icons-ic/twotone-work';
 import icPhone from '@iconify/icons-ic/twotone-phone';
 import icPersonAdd from '@iconify/icons-ic/twotone-person-add';
 import icCheck from '@iconify/icons-ic/twotone-check';
+import {MatDialog} from '@angular/material/dialog';
+import {CustomerCreateUpdateComponent} from '../../aio-table/customer-create-update/customer-create-update.component';
+import {Customer} from '../../aio-table/interfaces/customer.model';
+import icSearch from '@iconify/icons-ic/twotone-search';
 
 @Component({
     selector: 'vex-social-profile',
@@ -37,6 +41,7 @@ export class SocialProfileComponent implements OnInit {
     icAccessTime = icAccessTime;
     icAdd = icAdd;
     icWhatshot = icWhatshot;
+    icSearch = icSearch;
 
     constructor() {
     }
@@ -54,5 +59,12 @@ export class SocialProfileComponent implements OnInit {
 
     trackByName(index: number, friend: FriendSuggestion) {
         return friend.name;
+    }
+
+    createCustomer() { 
+        // this.dialog.open(CustomerCreateUpdateComponent, {
+        //     width: '100%',
+        //     maxWidth: 600
+        // });
     }
 }

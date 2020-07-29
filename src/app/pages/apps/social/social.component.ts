@@ -32,12 +32,7 @@ export class SocialComponent implements OnInit {
             route: './timeline'
         },
         {
-            label: 'FRIENDS',
-            route: '',
-            disabled: true
-        },
-        {
-            label: 'PHOTOS',
+            label: 'QUARANTINE PASS',
             route: '',
             disabled: true
         }

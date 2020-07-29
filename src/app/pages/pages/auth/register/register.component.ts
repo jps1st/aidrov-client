@@ -4,8 +4,8 @@ import icVisibilityOff from '@iconify/icons-ic/twotone-visibility-off';
 import {FormBuilder, FormGroup, Validators} from '@angular/forms';
 import {Router} from '@angular/router';
 import {fadeInUp400ms} from '../../../../../@vex/animations/fade-in-up.animation';
-import {MatSnackBar} from "@angular/material/snack-bar";
-import {AuthService} from "../../../../auth/auth.service";
+import {MatSnackBar} from '@angular/material/snack-bar';
+import {AuthService} from '../../../../auth/auth.service';
 
 @Component({
     selector: 'vex-register',

@@ -36,10 +36,32 @@
                                     <input formControlName="lastName" matInput required> 
                                 </mat-form-field> 
                             </div>
-                            <mat-form-field fxFlex="auto">
-                                <mat-label>Address</mat-label>
-                                <input formControlName="address" matInput required> 
-                            </mat-form-field> 
+                            <div fxLayout="column" fxLayout.gt-xs="row" fxLayoutGap="8px" fxLayoutGap.gt-xs="24px">
+                                <mat-form-field fxFlex="auto">
+                                    <mat-label>Street/House No.</mat-label>
+                                    <input formControlName="sreetHouseNo" matInput required> 
+                                </mat-form-field>
+
+                                <mat-form-field fxFlex="auto">
+                                    <mat-label>Purok</mat-label>
+                                    <input formControlName="purok" matInput required> 
+                                </mat-form-field>
+
+                                <mat-form-field fxFlex="auto">
+                                    <mat-label>Baranggay</mat-label>
+                                    <input formControlName="baranggay" matInput required> 
+                                </mat-form-field> 
+
+                                <mat-form-field fxFlex="auto">
+                                    <mat-label>Municipality</mat-label>
+                                    <input formControlName="municipality" matInput required> 
+                                </mat-form-field> 
+
+                                <mat-form-field fxFlex="auto">
+                                    <mat-label>Province</mat-label>
+                                    <input formControlName="province" matInput required> 
+                                </mat-form-field> 
+                            </div>
                             <div fxLayout="column" fxLayout.gt-xs="row" fxLayoutGap="8px" fxLayoutGap.gt-xs="24px">
                                 <mat-form-field class="flex-auto" required>
                                     <mat-label>Gender</mat-label>

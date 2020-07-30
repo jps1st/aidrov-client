@@ -131,13 +131,7 @@ export class AppComponent {
                                 routerLinkActiveOptions: {exact: true}
                             }
                         ]
-                    },
-                    {
-                        type: 'link',
-                        label: 'Register',
-                        route: '/register',
-                        icon: icAssigment
-                    }
+                    } 
                 ]
             }, 
             {

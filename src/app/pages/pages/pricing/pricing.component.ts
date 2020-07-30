@@ -5,19 +5,24 @@ import icBusinessCenter from '@iconify/icons-ic/twotone-business-center';
 import icPhoneInTalk from '@iconify/icons-ic/twotone-phone-in-talk';
 import icMail from '@iconify/icons-ic/twotone-mail';
 import {MatSnackBar} from '@angular/material/snack-bar';
-import {stagger60ms} from '../../../../@vex/animations/stagger.animation';
-import {fadeInUp400ms} from '../../../../@vex/animations/fade-in-up.animation';
+import {stagger60ms} from '../../../../@vex/animations/stagger.animation'; 
 import icDescription from '@iconify/icons-ic/twotone-description';
 import icDoneAll from '@iconify/icons-ic/twotone-done-all';
 import {FormBuilder, FormGroup, Validators} from '@angular/forms';
+import {stagger80ms} from '../../../../@vex/animations/stagger.animation';
+import {fadeInUp400ms} from '../../../../@vex/animations/fade-in-up.animation';
+import {scaleIn400ms} from '../../../../@vex/animations/scale-in.animation';
+import {fadeInRight400ms} from '../../../../@vex/animations/fade-in-right.animation';
 
 @Component({
     selector: 'vex-pricing',
     templateUrl: './pricing.component.html',
     styleUrls: ['./pricing.component.scss'],
     animations: [
-        stagger60ms,
-        fadeInUp400ms
+        stagger80ms,
+        fadeInUp400ms,
+        scaleIn400ms,
+        fadeInRight400ms
     ]
 })
 export class PricingComponent implements OnInit {
@@ -46,7 +51,11 @@ export class PricingComponent implements OnInit {
             firstName: [null, Validators.required],
             middleName: [null, Validators.required],
             lastName: [null, Validators.required],
-            address: [null, Validators.required],
+            sreetHouseNo: [null, Validators.required],
+            purok: [null, Validators.required],
+            baranggay: [null, Validators.required],
+            municipality: [null, Validators.required],
+            province: [null, Validators.required], 
             gender: [null, Validators.required],
             status: [null, Validators.required],
             birthDate: [null, Validators.required],

@@ -25,8 +25,7 @@ import {UntilDestroy, untilDestroyed} from '@ngneat/until-destroy';
 import {MatSelectChange} from '@angular/material/select';
 import icPhone from '@iconify/icons-ic/twotone-phone';
 import icMail from '@iconify/icons-ic/twotone-mail';
-import icMap from '@iconify/icons-ic/twotone-map'; 
-
+import icMap from '@iconify/icons-ic/twotone-map';
 
 
 @UntilDestroy()

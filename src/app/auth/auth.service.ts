@@ -9,7 +9,7 @@ import {APIService} from '../backend/api.service';
 })
 export class AuthService {
 
-    private userAccount: Account;
+    public userAccount: Account;
 
     constructor(
         public router: Router,

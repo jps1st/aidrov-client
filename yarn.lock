@@ -1117,6 +1117,11 @@
   resolved "https://registry.yarnpkg.com/@iconify/icons-logos/-/icons-logos-1.0.12.tgz#0327f3e44c78aaa85c199e30881c84f26f3b3b07"
   integrity sha512-VC5hcZ2lw1D15iQX5AukQ0m5r6EmRJ5jg6zoTL+XCRwH1RTdu0jUw6uN35uPTKp7OohAj1eLIjjnZw0WPeBkJg==
 
+"@iconify/icons-mdi@^1.0.123":
+  version "1.0.123"
+  resolved "https://registry.yarnpkg.com/@iconify/icons-mdi/-/icons-mdi-1.0.123.tgz#1f80cac8ee35f3c3ec781e101f0ba6442307565e"
+  integrity sha512-z5FjK4nfkukF4UM+tLZ8xcKx5u6w7U0aitagG+DE0gMkJ3wbfxjc0tfMfQSCfKvI41RIVEkLS/fQwqymX9nH1g==
+
 "@istanbuljs/schema@^0.1.2":
   version "0.1.2"
   resolved "https://registry.yarnpkg.com/@istanbuljs/schema/-/schema-0.1.2.tgz#26520bf09abe4a5644cd5414e37125a8954241dd"

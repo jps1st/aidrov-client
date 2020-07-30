@@ -3,50 +3,30 @@ import {FriendSuggestion} from '../app/pages/apps/social/social.component';
 export const friendSuggestions: FriendSuggestion[] = [
     {
         name: 'Fannie Wilson',
-        imageSrc: 'assets/img/avatars/1.jpg',
+        imageSrc: 'assets/img/avatars/girl1.png',
+        rel: 'Daughter',
         friends: 6,
         added: false
     },
     {
         name: 'Priscilla Ayala',
-        imageSrc: 'assets/img/avatars/2.jpg',
+        imageSrc: 'assets/img/avatars/girl2.png',
+        rel: 'Hired Help',
         friends: 3,
         added: false
     },
     {
         name: 'Margaret Farley',
-        imageSrc: 'assets/img/avatars/3.jpg',
+        imageSrc: 'assets/img/avatars/male1.png',
+        rel: 'Son',
         friends: 3,
         added: true
     },
     {
         name: 'Alston Tucker',
-        imageSrc: 'assets/img/avatars/4.jpg',
+        imageSrc: 'assets/img/avatars/male2.png',
+        rel: 'Spouse',
         friends: 1,
         added: true
-    },
-    {
-        name: 'Frye Humphrey',
-        imageSrc: 'assets/img/avatars/5.jpg',
-        friends: 1,
-        added: true
-    },
-    {
-        name: 'Jannie Cochran',
-        imageSrc: 'assets/img/avatars/6.jpg',
-        friends: 5,
-        added: false
-    },
-    {
-        name: 'Perkins Doyle',
-        imageSrc: 'assets/img/avatars/7.jpg',
-        friends: 7,
-        added: false
-    },
-    {
-        name: 'Marci Boyd',
-        imageSrc: 'assets/img/avatars/8.jpg',
-        friends: 2,
-        added: false
     }
 ];

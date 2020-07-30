@@ -1,12 +1,27 @@
+<button class="mt-6" color="primary" mat-raised-button type="button">Update</button>
 
 <div class="mt-6 flex flex-col md:flex-row md:items-start">
     <div class="flex-auto">
         <div class="card">
             <div class="px-gutter py-4 border-b">
-                <h2 class="title m-0">About</h2> 
+                <h2 class="title m-0">About</h2>
+                Individual information summary.
             </div>
 
             <div class="px-gutter py-4" gdColumns="1fr 1fr" gdColumns.xs="1fr" gdGap="16px">
+
+                <div class="py-3" fxLayout="row" fxLayoutAlign="start center">
+                    <div @scaleIn
+                         class="w-10 h-10 rounded-full bg-primary-light text-primary ltr:mr-3 rtl:ml-3 flex items-center justify-center">
+                        <ic-icon [icon]="icMail" size="20px"></ic-icon>
+                    </div>
+
+                    <div @fadeInRight>
+                        <p class="m-0 body-1">Mantalban, Alexandre Dumas (Jr)</p>
+                        <p class="m-0 caption text-hint">Full Name</p>
+                    </div>
+                </div>
+
                 <div class="py-3" fxLayout="row" fxLayoutAlign="start center">
                     <div @scaleIn
                          class="w-10 h-10 rounded-full bg-primary-light text-primary ltr:mr-3 rtl:ml-3 flex items-center justify-center">
@@ -14,8 +29,8 @@
                     </div>
 
                     <div @fadeInRight>
-                        <p class="m-0 body-1">+1 (930) 502-3182</p>
-                        <p class="m-0 caption text-hint">Personal</p>
+                        <p class="m-0 body-1">095023211441</p>
+                        <p class="m-0 caption text-hint">Phone</p>
                     </div>
                 </div>
 
@@ -26,10 +41,11 @@
                     </div>
 
                     <div @fadeInRight>
-                        <p class="m-0 body-1">Web Developer at IceCube</p>
-                        <p class="m-0 caption text-hint">Previously Designer at HotStuff</p>
+                        <p class="m-0 body-1">Cor Jesu College, Digos</p>
+                        <p class="m-0 caption text-hint">Employer</p>
                     </div>
                 </div>
+
 
                 <div class="py-3" fxLayout="row" fxLayoutAlign="start center">
                     <div @scaleIn
@@ -38,44 +54,14 @@
                     </div>
 
                     <div @fadeInRight>
-                        <p class="m-0 body-1">david.smith@example.com</p>
-                        <p class="m-0 caption text-hint">Personal Inquery</p>
+                        <p class="m-0 body-1">1021 San Diego,</p>
+                        <p class="m-0 body-1">Purok Ipil-ipil,</p>
+                        <p class="m-0 body-1">Brgy. Kapatagan, Digos City</p>
+                        <p class="m-0 body-1">Davao del sur</p>
+                        <p class="m-0 caption text-hint">Residence</p>
                     </div>
                 </div>
 
-                <div class="py-3" fxLayout="row" fxLayoutAlign="start center">
-                    <div @scaleIn
-                         class="w-10 h-10 rounded-full bg-primary-light text-primary ltr:mr-3 rtl:ml-3 flex items-center justify-center">
-                        <ic-icon [icon]="icMail" size="20px"></ic-icon>
-                    </div>
-
-                    <div @fadeInRight>
-                        <p class="m-0 body-1">Blk.1 lot 1. street 1 city, country</p>
-                        <p class="m-0 caption text-hint">Primary address</p>
-                    </div>
-                </div>
-
-                <div class="py-3" fxLayout="row" fxLayoutAlign="start center">
-                    <div @scaleIn
-                         class="w-10 h-10 rounded-full bg-gray-light text-dark ltr:mr-3 rtl:ml-3 cursor-pointer flex items-center justify-center">
-                        <button type="button">
-                            <a routerLink="/apps/citizen-view" routerLinkActive="active">
-                                <ic-icon [icon]="icAdd" size="20px"></ic-icon>
-                                <p @fadeInRight class="m-0 body-1 cursor-pointer">Edit Personal Information</p>
-                            </a>
-                        </button>
-                    </div>
-
-                </div>
-            </div>
-        </div>
-
-        <div class="card mt-6">
-            <div class="px-gutter py-4 border-b">
-                <h2 class="title m-0">Details</h2>
-            </div>
-
-            <div class="px-gutter py-4" gdColumns="1fr 1fr" gdColumns.xs="1fr" gdGap="16px">
                 <div class="py-3" fxLayout="row" fxLayoutAlign="start center">
                     <div @scaleIn
                          class="w-10 h-10 rounded-full bg-gray-light text-dark ltr:mr-3 rtl:ml-3 flex items-center justify-center">
@@ -96,7 +82,7 @@
 
                     <div @fadeInRight>
                         <p class="m-0 body-1">Single</p>
-                        <p class="m-0 caption text-hint">Status</p>
+                        <p class="m-0 caption text-hint">Civil Status</p>
                     </div>
                 </div>
 
@@ -123,14 +109,18 @@
                         <p class="m-0 caption text-hint">Proof of Identity</p>
                     </div>
                 </div>
+
             </div>
+
         </div>
+
     </div>
 
     <div class="card max-w-unset md:max-w-xs w-full flex-none md:ltr:ml-6 md:rtl:mr-6 mt-6 md:mt-0">
         <div class="px-6 py-4 border-b" fxLayout="row">
             <div fxFlex="auto">
                 <h2 class="title m-1">Household Members</h2>
+                List of household members with direct contact.
             </div>
             <button color="primary" mat-icon-button type="button">
                 <mat-icon [icIcon]="icPersonAdd"></mat-icon>
@@ -143,25 +133,25 @@
                      fxFlex="none"/>
                 <div @fadeInRight fxFlex="auto">
                     <h4 class="body-2 m-0 leading-snug">{{ friend.name }}</h4>
-                    <h5 class="text-secondary m-0 caption leading-none">{{ friend.friends }} mutual friends</h5>
-                </div> 
-                <button (click)="addFriend(friend)" *ngIf="!friend.added" color="primary" mat-icon-button type="button">
-                    <mat-icon [icIcon]="icPersonAdd"></mat-icon>
-                </button>
+                    <h5 class="text-secondary m-0 caption leading-none">{{ friend.rel }}</h5>
+                </div>
+                <!--                <button (click)="addFriend(friend)" *ngIf="!friend.added" color="primary" mat-icon-button type="button">-->
+                <!--                    <mat-icon [icIcon]="icPersonAdd"></mat-icon>-->
+                <!--                </button>-->
 
-                <button (click)="removeFriend(friend)" *ngIf="friend.added" color="primary" mat-icon-button
-                        type="button">
-                    <mat-icon [icIcon]="icCheck"></mat-icon>
-                </button>
-            </div> 
+                <!--                <button (click)="removeFriend(friend)" *ngIf="friend.added" color="primary" mat-icon-button-->
+                <!--                        type="button">-->
+                <!--                    <mat-icon [icIcon]="icCheck"></mat-icon>-->
+                <!--                </button>-->
+            </div>
         </div>
-        <div class="px-6 py-4 border-b" fxLayout="row" fxHide.xs  fxLayoutAlign="start center"  fxHide.xs>
-            <ic-icon [icon]="icSearch" class="ml-4 mr-3" size="18px"></ic-icon>
-                    <input 
-                           class="outline-none border-0 h-10 placeholder:text-secondary body-1 bg-card"
-                           fxFlex="auto"
-                           placeholder="Search Icons..."
-                           type="text">
-        </div>
+        <!--        <div class="px-6 py-4 border-b" fxLayout="row" fxHide.xs  fxLayoutAlign="start center"  fxHide.xs>-->
+        <!--            <ic-icon [icon]="icSearch" class="ml-4 mr-3" size="18px"></ic-icon>-->
+        <!--                    <input -->
+        <!--                           class="outline-none border-0 h-10 placeholder:text-secondary body-1 bg-card"-->
+        <!--                           fxFlex="auto"-->
+        <!--                           placeholder="Search Icons..."-->
+        <!--                           type="text">-->
+        <!--        </div>-->
     </div>
 </div>

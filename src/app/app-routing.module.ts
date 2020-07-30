@@ -59,8 +59,9 @@ const routes: VexRoutes = [
                         }
                     },
                     {
-                        path: 'social',
-                        loadChildren: () => import('./pages/apps/social/social.module').then(m => m.SocialModule)
+                        path: 'social/:id',
+                        loadChildren: () => import('./pages/apps/aidrov/citizen-profile/citizen-profile.module')
+                            .then(m => m.CitizenProfileModule)
                     },
                     {
                         path: 'contacts',

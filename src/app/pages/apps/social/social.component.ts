@@ -8,6 +8,7 @@ export interface FriendSuggestion {
     imageSrc: string;
     friends: number;
     added: boolean;
+    rel: string;
 }
 
 @Component({
@@ -23,16 +24,16 @@ export class SocialComponent implements OnInit {
 
     links: Link[] = [
         {
-            label: 'ABOUT',
+            label: 'My Profile',
             route: './',
             routerLinkActiveOptions: {exact: true}
         },
         {
-            label: 'TIMELINE',
+            label: 'Activity',
             route: './timeline'
         },
         {
-            label: 'QUARANTINE PASS',
+            label: 'Quarantine Pass',
             route: '',
             disabled: true
         }

@@ -12,6 +12,7 @@ import icPerson from '@iconify/icons-ic/twotone-person';
 import icMyLocation from '@iconify/icons-ic/twotone-my-location';
 import icLocationCity from '@iconify/icons-ic/twotone-location-city';
 import icEditLocation from '@iconify/icons-ic/twotone-edit-location';
+import icApprove from '@iconify/icons-ic/twotone-how-to-reg'; 
 
 @Component({
     selector: 'vex-customer-create-update',
@@ -37,6 +38,7 @@ export class CustomerCreateUpdateComponent implements OnInit {
     icLocationCity = icLocationCity;
     icEditLocation = icEditLocation;
     icPhone = icPhone;
+    icApprove = icApprove;
 
     constructor(@Inject(MAT_DIALOG_DATA) public defaults: any,
                 private dialogRef: MatDialogRef<CustomerCreateUpdateComponent>,

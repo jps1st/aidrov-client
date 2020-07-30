@@ -25,7 +25,8 @@ import {UntilDestroy, untilDestroyed} from '@ngneat/until-destroy';
 import {MatSelectChange} from '@angular/material/select';
 import icPhone from '@iconify/icons-ic/twotone-phone';
 import icMail from '@iconify/icons-ic/twotone-mail';
-import icMap from '@iconify/icons-ic/twotone-map';
+import icMap from '@iconify/icons-ic/twotone-map'; 
+
 
 
 @UntilDestroy()
@@ -64,6 +65,7 @@ export class AioTableComponent implements OnInit, AfterViewInit {
         {label: 'Image', property: 'image', type: 'image', visible: true},
         {label: 'Name', property: 'name', type: 'text', visible: true, cssClasses: ['font-medium']},
         {label: 'First Name', property: 'firstName', type: 'text', visible: false},
+        {label: 'Approved', property: 'approved', type: 'text', visible: true},
         {label: 'Last Name', property: 'lastName', type: 'text', visible: false},
         {label: 'Contact', property: 'contact', type: 'button', visible: true},
         {

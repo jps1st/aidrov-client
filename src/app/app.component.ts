@@ -138,6 +138,12 @@ export class AppComponent {
                         route: '/register',
                         icon: icAssigment
                     },
+                    {
+                        type: 'link',
+                        label: 'Citizen',
+                        route: '/citizen-view',
+                        icon: icAssigment
+                    },
                 ]
             }, 
             {

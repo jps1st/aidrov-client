@@ -9,7 +9,7 @@ import {HttpClientModule} from '@angular/common/http';
 import {CustomLayoutModule} from './custom-layout/custom-layout.module';
 import {CitizenModel} from 'aidrov-models';
 import {AuthGuard} from './auth/auth-guard.service';
-import {AuthService} from './auth/auth.service';
+import {AuthService} from './auth/auth.service'; 
 
 @NgModule({
     declarations: [AppComponent],
@@ -17,7 +17,7 @@ import {AuthService} from './auth/auth.service';
         BrowserModule,
         AppRoutingModule,
         BrowserAnimationsModule,
-        HttpClientModule,
+        HttpClientModule, 
 
         // Vex
         VexModule,

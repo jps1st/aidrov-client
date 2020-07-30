@@ -58,8 +58,10 @@
                 <div class="py-3" fxLayout="row" fxLayoutAlign="start center">
                     <div @scaleIn
                          class="w-10 h-10 rounded-full bg-gray-light text-dark ltr:mr-3 rtl:ml-3 cursor-pointer flex items-center justify-center">
-                        <button type="button" (click)="createCustomer()">
-                         <ic-icon [icon]="icAdd" size="20px"></ic-icon>
+                        <button type="button">
+                            <a routerLink="/apps/citizen-view" routerLinkActive="active">
+                                <ic-icon [icon]="icAdd" size="20px"></ic-icon>
+                            </a>
                         </button>
                     </div>
 

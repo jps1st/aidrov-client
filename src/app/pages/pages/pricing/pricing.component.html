@@ -1,94 +1,140 @@
-<div @stagger>
-    <div class="bg-card py-16 px-gutter">
-        <h1 @fadeInUp class="display-2 mt-0 mb-4 text-center">Pricing & Plans</h1>
-        <h2 @fadeInUp class="subheading-2 text-hint text-center max-w-lg mx-auto m-0">Simple, transparent pricing.</h2>
-    </div>
+<div @stagger class="p-gutter" vexContainer>
+    <h2 class="title mb-4" fxLayout="row" fxLayoutAlign="start center">
+        <span @scaleIn class="w-10 h-10 rounded-full text-primary mr-3 flex items-center justify-center bg-primary-light">
+          <ic-icon [icon]="icDescription" height="20px" width="20px"></ic-icon>
+        </span>
+            <span @fadeInRight class="block">Personal Profile</span>
+        </h2>
 
-    <div class="my-12 container"
-         fxLayout="row"
-         fxLayout.xs="column"
-         fxLayoutAlign="start start"
-         fxLayoutAlign.xs="start stretch"
-         fxLayoutGap="24px">
+        <div @fadeInUp class="card overflow-hidden">
+            <mat-horizontal-stepper #stepper="matHorizontalStepper" [linear]="true">
+                <ng-template matStepperIcon="edit">
+                    <mat-icon [icIcon]="icDoneAll"></mat-icon>
+                </ng-template>
 
-        <div @fadeInUp class="card p-6" fxFlex fxLayout="column" fxLayoutAlign="start center">
-            <div class="inline-block p-6 rounded-full text-primary mx-auto flex items-center justify-center bg-primary-light">
-                <ic-icon [icon]="icBeenhere" size="48px"></ic-icon>
-            </div>
+                <mat-step [stepControl]="accountFormGroup">
+                    <form [formGroup]="accountFormGroup">
+                        <ng-template matStepLabel>Personal Informtion</ng-template>
 
-            <h2 class="headline my-6">Basic Plan</h2>
+                    <h2 class="title m-0">Personal Informtion</h2>
+                    <div class="subheading-1">Fill in Necessary Information</div>
 
-            <div class="body-1"><span class="body-2">2</span> Users</div>
-            <div class="body-1"><span class="body-2">10</span> Projects</div>
-            <div class="body-1"><span class="body-2">10GB</span> Storage</div>
-            <div class="body-1"><span class="body-2">Basic</span> Support</div>
+                        <div class="mt-4" fxLayout="column" fxLayoutGap="8px">
+                            <div fxLayout="column" fxLayout.gt-xs="row" fxLayoutGap="8px" fxLayoutGap.gt-xs="24px">
+                                <mat-form-field fxFlex="auto">
+                                    <mat-label>First Name</mat-label>
+                                    <input formControlName="firstName" matInput required> 
+                                </mat-form-field>
 
-            <h3 class="display-2 font-bold my-6">19<span class="text-secondary headline align-top">$</span></h3>
+                                <mat-form-field fxFlex="auto">
+                                    <mat-label>Middle Name</mat-label>
+                                    <input formControlName="middleName" matInput required> 
+                                </mat-form-field>
 
-            <button class="rounded-full max-w-full w-200" color="primary" mat-raised-button type="button">PURCHASE
-            </button>
-        </div>
+                                <mat-form-field fxFlex="auto">
+                                    <mat-label>Last Name</mat-label>
+                                    <input formControlName="lastName" matInput required> 
+                                </mat-form-field> 
+                            </div>
+                            <mat-form-field fxFlex="auto">
+                                <mat-label>Address</mat-label>
+                                <input formControlName="address" matInput required> 
+                            </mat-form-field> 
+                            <div fxLayout="column" fxLayout.gt-xs="row" fxLayoutGap="8px" fxLayoutGap.gt-xs="24px">
+                                <mat-form-field class="flex-auto" required>
+                                    <mat-label>Gender</mat-label>
+                                    <mat-select formControlName="gender">
+                                        <mat-option value="Male">Male</mat-option>
+                                        <mat-option value="Female">Female</mat-option>
+                                    </mat-select>
+                     
+                                </mat-form-field>
+                    
+                                <mat-form-field class="sm:ml-6 flex-auto">
+                                    <mat-label>Status</mat-label>
+                                    <mat-select formControlName="status" required>
+                                        <mat-option value="Single">Single</mat-option>
+                                        <mat-option value="Married">Married</mat-option>
+                                        <mat-option value="Separated">Separated</mat-option>
+                                        <mat-option value="Single Parent">Single Parent</mat-option>
+                                    </mat-select> 
+                                </mat-form-field>
+                            </div>
+                            <div fxLayout="column" fxLayout.gt-xs="row" fxLayoutGap="8px" fxLayoutGap.gt-xs="24px">
+                                <mat-form-field class="flex-auto">
+                                    <mat-label>Birth Date</mat-label>
+                                    <input matInput  type="date" formControlName="birthDate" required> 
+                     
+                                </mat-form-field>
+                                
+                                <mat-form-field class="sm:ml-6 flex-auto">
+                                    <mat-label>Residence Type</mat-label>
+                                    <mat-select formControlName="residenceType" required>
+                                        <mat-option value="Single">Digos Resident</mat-option>
+                                        <mat-option value="Married">Non Digos Resident</mat-option> 
+                                    </mat-select>
+                                    <mat-icon class="mr-3" matPrefix></mat-icon>
+                                </mat-form-field>
 
-        <div @fadeInUp class="card p-6" fxFlex fxLayout="column" fxLayoutAlign="start center">
-            <div class="inline-block p-6 rounded-full text-primary mx-auto flex items-center justify-center bg-primary-light">
-                <ic-icon [icon]="icStars" size="48px"></ic-icon>
-            </div>
+                                <mat-form-field class="flex-auto">
+                                    <mat-label>Phone Number</mat-label>
+                                    <input matInput formControlName="contact" required> 
+                     
+                                </mat-form-field>
 
-            <h2 class="headline my-6">Premium Plan</h2>
+                                <mat-form-field class="flex-auto">
+                                    <mat-label>Email</mat-label>
+                                    <input matInput formControlName="email"> 
+                     
+                                </mat-form-field>
+                            </div>
+                        </div>
+                        <div class="actions" fxLayout="row" fxLayoutAlign="end center" fxLayoutGap="8px">   
+                            <button [disabled]="accountFormGroup.invalid" color="primary" mat-raised-button matStepperNext>
+                                NEXT
+                            </button>
+                        </div>
+                    </form>
+                </mat-step>
 
-            <div class="body-1"><span class="body-2">10</span> Users</div>
-            <div class="body-1"><span class="body-2">500</span> Projects</div>
-            <div class="body-1"><span class="body-2">1TB</span> Storage</div>
-            <div class="body-1"><span class="body-2">Priority</span> Support</div>
+                <mat-step [stepControl]="householdMemberFormGroup">
+                    <form [formGroup]="householdMemberFormGroup">
+                        <ng-template matStepLabel>Images</ng-template>
 
-            <h3 class="display-2 font-bold my-6">59<span class="text-secondary headline align-top">$</span></h3>
+                    <h2 class="title m-0">Images</h2>
+                    <div class="subheading-1">Upload Necessary Images</div>
 
-            <button class="rounded-full max-w-full w-200" color="primary" mat-raised-button type="button">PURCHASE
-            </button>
-        </div>
+                    <div class="mt-4" fxLayout="column" fxLayoutGap="8px">
+                        <div layout-margin layout-padding>
+                            <input class="ng-hide" id="input-file-id" multiple type="file" />
+                            <label for="input-file-id" class="md-button md-raised md-primary">Choose Files For Profile Picture</label>
+                        </div>
+                    </div>
+                    <br><br>
+                    <mat-form-field class="flex-auto">
+                        <mat-label>Proof of Identity</mat-label>
+                        <input matInput> 
+            
+                        <mat-icon class="mr-3" matPrefix></mat-icon>
+                    </mat-form-field> 
+                    <div class="mt-4" fxLayout="column" fxLayoutGap="8px">
+                        <div layout-margin layout-padding>
+                            <input class="ng-hide" id="input-file-id" multiple type="file" />
+                            <label for="input-file-id" class="md-button md-raised md-primary">Choose Files for Proof of Identity</label>
+                        </div>
+                    </div>
 
-        <div @fadeInUp class="card p-6" fxFlex fxLayout="column" fxLayoutAlign="start center">
-            <div class="inline-block p-6 rounded-full text-primary mx-auto flex items-center justify-center bg-primary-light">
-                <ic-icon [icon]="icBusinessCenter" size="48px"></ic-icon>
-            </div>
+                    <div class="actions" fxLayout="row" fxLayoutAlign="end center" fxLayoutGap="8px">
+                        <button color="primary" mat-button matStepperPrevious type="button">PREVIOUS</button>
+                        <button color="primary"
+                                mat-raised-button
+                                matStepperNext>
+                            CREATE ACCOUNT
+                        </button>
+                    </div>
+                    </form>
+                </mat-step>
 
-            <h2 class="headline my-6">Enterprise Plan</h2>
-
-            <div class="body-1"><span class="body-2">Unlimited</span> Users</div>
-            <div class="body-1"><span class="body-2">Unlimited</span> Projects</div>
-            <div class="body-1"><span class="body-2">Unlimited</span> Storage</div>
-            <div class="body-1"><span class="body-2">Dedicated</span> Support</div>
-
-            <h3 class="display-2 font-bold my-6">699<span class="text-secondary headline align-top">$</span></h3>
-
-            <button class="rounded-full max-w-full w-200" color="primary" mat-raised-button type="button">PURCHASE
-            </button>
-        </div>
-
-    </div>
-
-    <div @fadeInUp class="bg-card py-16 px-gutter footer">
-        <h2 class="display-1 mt-0 mb-4 text-center">Still have questions?</h2>
-        <h3 class="subheading-2 text-hint text-center max-w-lg mx-auto m-0">A wonderful serenity has taken possession of
-            my
-            entire
-            soul, like these sweet
-            mornings of spring which I enjoy with my whole heart.</h3>
-
-        <div class="mt-16 max-w-3xl mx-auto flex flex-col md:flex-row">
-            <a class="text-center p-6 border rounded md:w-1/2 md:mx-2"
-               routerLinkActive>
-                <ic-icon [icon]="icPhoneInTalk" class="text-hint" size="42px"></ic-icon>
-                <h3 class="title mb-0 mt-4">+1 (840) 423-3404</h3>
-                <h4 class="subheading-2 m-0 text-hint">Call us anytime for a quick solution</h4>
-            </a>
-
-            <a class="text-center p-6 border rounded md:w-1/2 md:mx-2"
-               routerLinkActive>
-                <ic-icon [icon]="icMail" class="text-hint" size="42px"></ic-icon>
-                <h3 class="title mb-0 mt-4">support@example.com</h3>
-                <h4 class="subheading-2 m-0 text-hint">Send us a mail to resolve your issue</h4>
-            </a>
-        </div>
+            </mat-horizontal-stepper>
     </div>
 </div>

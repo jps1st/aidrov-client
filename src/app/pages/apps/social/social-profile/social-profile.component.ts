@@ -62,9 +62,6 @@ export class SocialProfileComponent implements OnInit {
     }
 
     createCustomer() { 
-        // this.dialog.open(CustomerCreateUpdateComponent, {
-        //     width: '100%',
-        //     maxWidth: 600
-        // });
+       alert("here");
     }
 }

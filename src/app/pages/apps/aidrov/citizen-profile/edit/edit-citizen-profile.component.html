@@ -42,6 +42,7 @@
                         <mat-select formControlName="gender">
                             <mat-option value="Male">Male</mat-option>
                             <mat-option value="Female">Female</mat-option>
+                            <mat-option value="LGBTQ+">LGBTQ+</mat-option>
                         </mat-select>
 
                     </mat-form-field>
@@ -52,6 +53,7 @@
                             <mat-option value="Single">Single</mat-option>
                             <mat-option value="Married">Married</mat-option>
                             <mat-option value="Wid">Widow/er</mat-option>
+                            <mat-option value="Divorced">Divorced</mat-option>
                             <mat-option value="Single Parent">Single Parent</mat-option>
                             <mat-option value="Separated">Separated</mat-option>
                         </mat-select>
@@ -69,15 +71,21 @@
 
                 <div fxLayout="column" fxLayout.gt-xs="row" fxLayoutGap="8px" fxLayoutGap.gt-xs="24px">
                     <mat-form-field appearance="standard" fxFlex="auto">
-                        <mat-label>Street/House No.</mat-label>
-                        <input formControlName="sreetHouseNo" matInput required>
+                        <mat-label>Unit No./House No.</mat-label>
+                        <input formControlName="unitHouseNo" matInput required>
+                    </mat-form-field>
+
+                    <mat-form-field appearance="standard" fxFlex="auto">
+                        <mat-label>Street</mat-label>
+                        <input formControlName="sreetHouseNo" matInput>
                     </mat-form-field>
 
                     <mat-form-field appearance="standard" fxFlex="auto">
                         <mat-label>Purok</mat-label>
                         <input formControlName="purok" matInput required>
-                    </mat-form-field>
-
+                    </mat-form-field>                    
+                </div>
+                <div fxLayout="column" fxLayout.gt-xs="row" fxLayoutGap="8px" fxLayoutGap.gt-xs="24px">
                     <mat-form-field appearance="standard" fxFlex="auto">
                         <mat-label>Barangay</mat-label>
                         <input formControlName="baranggay" matInput required>
@@ -100,8 +108,18 @@
                 <div fxLayout="column" fxLayout.gt-xs="row" fxLayoutGap="8px" fxLayoutGap.gt-xs="24px">
 
                     <mat-form-field appearance="standard" class="flex-auto" disabled="true">
-                        <mat-label>Phone Number</mat-label>
-                        <input formControlName="contact" matInput required>
+                        <mat-label>Phone Home</mat-label>
+                        <input formControlName="contact" matInput>
+                    </mat-form-field>
+
+                    <mat-form-field appearance="standard" class="flex-auto" disabled="true">
+                        <mat-label>Phone Mobile</mat-label>
+                        <input formControlName="contactMobile" matInput>
+                    </mat-form-field>
+
+                    <mat-form-field appearance="standard" class="flex-auto" disabled="true">
+                        <mat-label>Phone Office</mat-label>
+                        <input formControlName="contactOffice" matInput>
                     </mat-form-field>
 
                     <mat-form-field appearance="standard" class="flex-auto">
@@ -115,16 +133,61 @@
                 <mat-divider></mat-divider>
 
                 <div fxLayout="column" fxLayout.gt-xs="row" fxLayoutGap="8px" fxLayoutGap.gt-xs="24px">
-                    <mat-form-field appearance="standard" class="flex-auto">
-                        <mat-label>Employer</mat-label>
-                        <input formControlName="employer" matInput>
+                    <mat-form-field appearance="standard" class="flex-auto" required>
+                        <mat-label>Employed</mat-label>
+                        <mat-select formControlName="employed">
+                            <mat-option value="YES">YES</mat-option>
+                            <mat-option value="No">NO</mat-option> 
+                        </mat-select>
+
                     </mat-form-field>
+
                     <mat-form-field appearance="standard" class="flex-auto">
-                        <mat-label>Employment Position</mat-label>
-                        <input formControlName="employmentPosition" matInput>
+                        <mat-label>Occupation</mat-label>
+                        <mat-select formControlName="occupation">
+                            <mat-option value="Healthcare Practitioners and Technical">Healthcare Practitioners and Technical</mat-option> 
+                            <mat-option value="Healthcare Support">Healthcare Support</mat-option> 
+                            <mat-option value="Business, Executive, Management, and Financial">Healthcare Support</mat-option> 
+                            <mat-option value="Architecture and Engineering">Architecture and Engineering</mat-option> 
+                            <mat-option value="Education, Training, and Library">Education, Training, and Library</mat-option> 
+                            <mat-option value="Other Professional Occupations">Other Professional Occupations</mat-option>
+                            <mat-option value="Office and Administrative Support">Office and Administrative Support</mat-option> 
+                            <mat-option value="Services">Services</mat-option> 
+                            <mat-option value="Agriculture, Maintenance, Repair, and Skilled Crafts">Agriculture, Maintenance, Repair, and Skilled Crafts</mat-option>
+                            <mat-option value="Transportation">Transportation</mat-option>
+                            <mat-option value="Government Service">Government Service</mat-option> 
+                            <mat-option value="National Defence">National Defence</mat-option> 
+                            <mat-option value="OFW">OFW</mat-option> 
+                            <mat-option value="Others">Others</mat-option> 
+                        </mat-select>
+
+                    </mat-form-field>
+
+                    <mat-form-field appearance="standard" class="flex-auto">
+                        <mat-label>Company</mat-label>
+                        <mat-select formControlName="company">
+                            <mat-option value=""></mat-option> 
+                        </mat-select>
+
                     </mat-form-field>
                 </div>
 
+                <h3>Emergency Contacts</h3>
+                <mat-divider></mat-divider>
+
+                <div fxLayout="column" fxLayout.gt-xs="row" fxLayoutGap="8px" fxLayoutGap.gt-xs="24px">
+                    <mat-form-field appearance="standard" class="flex-auto" disabled="true">
+                        <mat-label>Contact Person</mat-label>
+                        <input formControlName="contactPerson" matInput>
+                    </mat-form-field>
+
+                    <mat-form-field appearance="standard" class="flex-auto" disabled="true">
+                        <mat-label>Contact Person Phone No.</mat-label>
+                        <input formControlName="contactPersonNo" matInput>
+                    </mat-form-field>
+                </div>
+
+            
                 <h3>Identification Documents</h3>
                 <mat-divider></mat-divider>
                 Provide the necessary documents to verify your identity.
@@ -136,6 +199,11 @@
                     </div>
                     <div layout-margin layout-padding>
                         <label class="md-button md-raised md-primary" for="input-file-id">Employment/Government ID:
+                            &nbsp;</label>
+                        <input class="ng-hide" id="input-file-id" multiple type="file"/>
+                    </div>
+                    <div layout-margin layout-padding>
+                        <label class="md-button md-raised md-primary" for="input-file-id">Prood of Residence:
                             &nbsp;</label>
                         <input class="ng-hide" id="input-file-id" multiple type="file"/>
                     </div>

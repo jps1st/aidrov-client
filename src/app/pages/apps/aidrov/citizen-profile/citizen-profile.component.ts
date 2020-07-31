@@ -4,7 +4,7 @@ import {scaleIn400ms} from '../../../../../@vex/animations/scale-in.animation';
 import {Link} from '../../../../../@vex/interfaces/link.interface';
 import {ActivatedRoute} from '@angular/router';
 import {CitizenProfilePageService} from './citizen-profile-page.service';
-
+import {CitizenModel} from 'aidrov-models';
 
 // export interface FriendSuggestion {
 //     name: string;
@@ -40,6 +40,8 @@ export class CitizenProfileComponent implements OnInit {
         //     disabled: true
         // }
     ];
+    val: CitizenModel;
+    private id: string;
 
     constructor(
         private activatedRoute: ActivatedRoute,
@@ -48,7 +50,12 @@ export class CitizenProfileComponent implements OnInit {
     }
 
     ngOnInit() {
-        const id = this.activatedRoute.snapshot.paramMap.get('id');
-        this.pageService.setTarget(id);
+        // const id = this.activatedRoute.snapshot.paramMap.get('id');
+        // this.pageService.setTarget(id);
+        this.id = this.activatedRoute.snapshot.paramMap.get('id');
+        this.pageService.subject.subscribe((val: CitizenModel) => {
+            this.val = val;
+            // console.log(val);
+        });
     }
 }

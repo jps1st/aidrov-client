@@ -1,4 +1,4 @@
-<button class="mt-6" color="primary" mat-raised-button type="button">Update</button>
+<button (click)="navToEdit()" class="mt-6" color="primary" mat-raised-button type="button">Update</button>
 <p class="mt-3">Your individual information is incomplete. To qualify for a quarantine pass, you must submit the
     necessary information for verification. Click on update.</p>
 
@@ -19,7 +19,7 @@
                     </div>
 
                     <div @fadeInRight>
-                        <p class="m-0 body-1">Mantalban, Alexandre Dumas (Jr)</p>
+                        <p class="m-0 body-1">{{val.lname}}, {{val.fname}} {{val.suffix}}</p>
                         <p class="m-0 caption text-hint">Full Name</p>
                     </div>
                 </div>
@@ -31,7 +31,7 @@
                     </div>
 
                     <div @fadeInRight>
-                        <p class="m-0 body-1">095023211441</p>
+                        <p class="m-0 body-1">{{val.mobileNumber}}</p>
                         <p class="m-0 caption text-hint">Phone</p>
                     </div>
                 </div>
@@ -43,7 +43,7 @@
                     </div>
 
                     <div @fadeInRight>
-                        <p class="m-0 body-1">Cor Jesu College, Digos</p>
+                        <p class="m-0 body-1">{{val.employer}}</p>
                         <p class="m-0 caption text-hint">Employer</p>
                     </div>
                 </div>
@@ -56,10 +56,10 @@
                     </div>
 
                     <div @fadeInRight>
-                        <p class="m-0 body-1">1021 San Diego,</p>
-                        <p class="m-0 body-1">Purok Ipil-ipil,</p>
-                        <p class="m-0 body-1">Brgy. Kapatagan, Digos City</p>
-                        <p class="m-0 body-1">Davao del sur</p>
+                        <p class="m-0 body-1">{{val.address.streetHouseNo}},</p>
+                        <p class="m-0 body-1">{{val.address.purok}},</p>
+                        <p class="m-0 body-1">{{val.address.barangay}}, {{val.address.municipality}}</p>
+                        <p class="m-0 body-1">{{val.address.province}}</p>
                         <p class="m-0 caption text-hint">Residence</p>
                     </div>
                 </div>
@@ -71,7 +71,7 @@
                     </div>
 
                     <div @fadeInRight>
-                        <p class="m-0 body-1">Male</p>
+                        <p class="m-0 body-1">{{val.gender}}</p>
                         <p class="m-0 caption text-hint">Gender</p>
                     </div>
                 </div>
@@ -95,7 +95,7 @@
                     </div>
 
                     <div @fadeInRight>
-                        <p class="m-0 body-1">August 1, 2020</p>
+                        <p class="m-0 body-1">{{val.bdate}}</p>
                         <p class="m-0 caption text-hint">Date of Birth</p>
                     </div>
                 </div>
@@ -107,8 +107,8 @@
                     </div>
 
                     <div @fadeInRight>
-                        <p class="m-0 body-1">Driver's Lincense</p>
-                        <p class="m-0 caption text-hint">Proof of Identity</p>
+                        <p class="m-0 body-1">PENDING</p>
+                        <p class="m-0 caption text-hint">Quarantine Pass Status</p>
                     </div>
                 </div>
 

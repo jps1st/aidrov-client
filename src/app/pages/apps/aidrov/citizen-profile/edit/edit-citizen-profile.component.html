@@ -1,0 +1,158 @@
+<!--<p class="mt-3">-->
+<!--    Your individual information is incomplete. To qualify for a quarantine pass, you must submit the-->
+<!--    necessary information for verification. Click on update.-->
+<!--</p>-->
+
+<div class="mt-6 flex flex-col md:flex-row md:items-start">
+    <div class="flex-auto">
+        <div class="card">
+            <div class="px-gutter py-4 border-b">
+                <h2 class=" m-0">Update Profile Information</h2>
+                Please fill-in the necessary fields to qualify for a quarantine pass.
+            </div>
+
+            <div [formGroup]="formGroup" class="px-gutter py-4" gdColumns="1fr" gdColumns.xs="1fr" gdGap="16px">
+
+                <div fxLayout="column" fxLayout.gt-xs="row" fxLayoutGap="8px" fxLayoutGap.gt-xs="24px">
+
+                    <mat-form-field appearance="standard" fxFlex="auto">
+                        <mat-label>First Name</mat-label>
+                        <input formControlName="firstName" matInput required>
+                    </mat-form-field>
+
+                    <mat-form-field appearance="standard" fxFlex="auto">
+                        <mat-label>Middle Name</mat-label>
+                        <input formControlName="middleName" matInput required>
+                    </mat-form-field>
+
+                    <mat-form-field appearance="standard" fxFlex="auto">
+                        <mat-label>Last Name</mat-label>
+                        <input formControlName="lastName" matInput required>
+                    </mat-form-field>
+
+                    <mat-form-field appearance="standard" fxFlex="auto">
+                        <mat-label>Suffix</mat-label>
+                        <input formControlName="suffix" matInput>
+                    </mat-form-field>
+                </div>
+
+                <div fxLayout="column" fxLayout.gt-xs="row" fxLayoutGap="8px" fxLayoutGap.gt-xs="24px">
+                    <mat-form-field appearance="standard" class="flex-auto" required>
+                        <mat-label>Gender</mat-label>
+                        <mat-select formControlName="gender">
+                            <mat-option value="Male">Male</mat-option>
+                            <mat-option value="Female">Female</mat-option>
+                        </mat-select>
+
+                    </mat-form-field>
+
+                    <mat-form-field appearance="standard" class="sm:ml-6 flex-auto">
+                        <mat-label>Civil Status</mat-label>
+                        <mat-select formControlName="status" required>
+                            <mat-option value="Single">Single</mat-option>
+                            <mat-option value="Married">Married</mat-option>
+                            <mat-option value="Wid">Widow/er</mat-option>
+                            <mat-option value="Single Parent">Single Parent</mat-option>
+                            <mat-option value="Separated">Separated</mat-option>
+                        </mat-select>
+                    </mat-form-field>
+
+                    <mat-form-field appearance="standard" class="flex-auto">
+                        <mat-label>Birth Date</mat-label>
+                        <input formControlName="birthDate" matInput required type="date">
+                    </mat-form-field>
+
+                </div>
+
+                <h3>Residence Information</h3>
+                <mat-divider></mat-divider>
+
+                <div fxLayout="column" fxLayout.gt-xs="row" fxLayoutGap="8px" fxLayoutGap.gt-xs="24px">
+                    <mat-form-field appearance="standard" fxFlex="auto">
+                        <mat-label>Street/House No.</mat-label>
+                        <input formControlName="sreetHouseNo" matInput required>
+                    </mat-form-field>
+
+                    <mat-form-field appearance="standard" fxFlex="auto">
+                        <mat-label>Purok</mat-label>
+                        <input formControlName="purok" matInput required>
+                    </mat-form-field>
+
+                    <mat-form-field appearance="standard" fxFlex="auto">
+                        <mat-label>Barangay</mat-label>
+                        <input formControlName="baranggay" matInput required>
+                    </mat-form-field>
+
+                    <mat-form-field appearance="standard" fxFlex="auto">
+                        <mat-label>Municipality</mat-label>
+                        <input formControlName="municipality" matInput required>
+                    </mat-form-field>
+
+                    <mat-form-field appearance="standard" fxFlex="auto">
+                        <mat-label>Province</mat-label>
+                        <input formControlName="province" matInput required>
+                    </mat-form-field>
+                </div>
+
+                <h3>Contact Information</h3>
+                <mat-divider></mat-divider>
+
+                <div fxLayout="column" fxLayout.gt-xs="row" fxLayoutGap="8px" fxLayoutGap.gt-xs="24px">
+
+                    <mat-form-field appearance="standard" class="flex-auto" disabled="true">
+                        <mat-label>Phone Number</mat-label>
+                        <input formControlName="contact" matInput required>
+                    </mat-form-field>
+
+                    <mat-form-field appearance="standard" class="flex-auto">
+                        <mat-label>Email</mat-label>
+                        <input formControlName="email" matInput>
+                    </mat-form-field>
+
+                </div>
+
+                <h3>Employment Information</h3>
+                <mat-divider></mat-divider>
+
+                <div fxLayout="column" fxLayout.gt-xs="row" fxLayoutGap="8px" fxLayoutGap.gt-xs="24px">
+                    <mat-form-field appearance="standard" class="flex-auto">
+                        <mat-label>Employer</mat-label>
+                        <input formControlName="employer" matInput>
+                    </mat-form-field>
+                    <mat-form-field appearance="standard" class="flex-auto">
+                        <mat-label>Employment Position</mat-label>
+                        <input formControlName="employmentPosition" matInput>
+                    </mat-form-field>
+                </div>
+
+                <h3>Identification Documents</h3>
+                <mat-divider></mat-divider>
+                Provide the necessary documents to verify your identity.
+
+                <div fxLayout="column" fxLayout.gt-xs="row" fxLayoutGap="8px" fxLayoutGap.gt-xs="24px">
+                    <div layout-margin layout-padding>
+                        <label class="md-button md-raised md-primary" for="input-file-id">Portrait: &nbsp;</label>
+                        <input class="ng-hide" id="input-file-portrait" type="file"/>
+                    </div>
+                    <div layout-margin layout-padding>
+                        <label class="md-button md-raised md-primary" for="input-file-id">Employment/Government ID:
+                            &nbsp;</label>
+                        <input class="ng-hide" id="input-file-id" multiple type="file"/>
+                    </div>
+                </div>
+
+                <div fxLayout="column" fxLayout.gt-xs="row" fxLayoutGap="8px" fxLayoutGap.gt-xs="24px">
+                    &nbsp;
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</div>
+
+<button (click)="submit()" [disabled]="formGroup.invalid" class="mt-6" color="primary" mat-raised-button type="button">
+    Submit
+</button>

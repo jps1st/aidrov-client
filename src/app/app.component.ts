@@ -121,13 +121,19 @@ export class AppComponent {
                             {
                                 type: 'link',
                                 label: 'Timeline',
-                                route: `/apps/social/${this.authService.userAccount.documentId}/timeline`,
+                                route: () => {
+                                    const currentUserId = this.authService.userAccount.documentId;
+                                    this.router.navigate(['/apps/social/', currentUserId, 'timeline']);
+                                },
                                 routerLinkActiveOptions: {exact: true}
                             },
                             {
                                 type: 'link',
                                 label: 'Quarantine Pass',
-                                route: `/apps/social/${this.authService.userAccount.documentId}/timeline`,
+                                route: () => {
+                                    const currentUserId = this.authService.userAccount.documentId;
+                                    this.router.navigate(['/apps/social/', currentUserId, 'qpass']);
+                                },
                                 routerLinkActiveOptions: {exact: true}
                             }
                         ]

@@ -39,7 +39,7 @@ export class AuthService {
         await this.api.logout();
         this.userAccount = null;
         localStorage.removeItem('loggedUsr');
-        this.router.navigate(['/pages/login']);
+        this.router.navigate(['/login']);
     }
 
     isAuthenticated() {

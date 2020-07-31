@@ -2,6 +2,8 @@ import {Component, OnInit} from '@angular/core';
 import {fadeInRight400ms} from '../../../../../@vex/animations/fade-in-right.animation';
 import {scaleIn400ms} from '../../../../../@vex/animations/scale-in.animation';
 import {Link} from '../../../../../@vex/interfaces/link.interface';
+import {ActivatedRoute} from '@angular/router';
+import {CitizenProfilePageService} from './citizen-profile-page.service';
 
 
 // export interface FriendSuggestion {
@@ -39,9 +41,14 @@ export class CitizenProfileComponent implements OnInit {
         // }
     ];
 
-    constructor() {
+    constructor(
+        private activatedRoute: ActivatedRoute,
+        private pageService: CitizenProfilePageService
+    ) {
     }
 
     ngOnInit() {
+        const id = this.activatedRoute.snapshot.paramMap.get('id');
+        this.pageService.setTarget(id);
     }
 }

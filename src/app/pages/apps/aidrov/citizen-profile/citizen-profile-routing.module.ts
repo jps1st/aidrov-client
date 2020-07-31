@@ -1,8 +1,9 @@
 import {NgModule} from '@angular/core';
 import {RouterModule} from '@angular/router';
 import {VexRoutes} from '../../../../../@vex/interfaces/vex-route.interface';
-import {CitizenProfileViewComponent} from './view/citizen-profile-view.component';
+import {ViewCitizenProfileComponent} from './view/view-citizen-profile.component';
 import {CitizenProfileComponent} from './citizen-profile.component';
+import {EditCitizenProfileComponent} from './edit/edit-citizen-profile.component';
 
 
 const routes: VexRoutes = [
@@ -16,11 +17,11 @@ const routes: VexRoutes = [
         children: [
             {
                 path: '',
-                component: CitizenProfileViewComponent
+                component: ViewCitizenProfileComponent
             },
             {
                 path: 'edit',
-                component: CitizenProfileViewComponent
+                component: EditCitizenProfileComponent
             },
             // {
             //     path: 'timeline',

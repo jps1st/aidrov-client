@@ -1609,9 +1609,9 @@ aggregate-error@^3.0.0:
     clean-stack "^2.0.0"
     indent-string "^4.0.0"
 
-"aidrov-models@file:aidrov-models-v1.0.0.tgz":
-  version "1.0.0"
-  resolved "file:aidrov-models-v1.0.0.tgz#964733dca69ad598e9675d4f85daf427cb6eddc5"
+"aidrov-models@file:aidrov-models-v1.0.2.tgz":
+  version "1.0.2"
+  resolved "file:aidrov-models-v1.0.2.tgz#dbda6e201655432679c13ba005cdd5d3f5e95dcb"
 
 ajv-errors@^1.0.0:
   version "1.0.1"

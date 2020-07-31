@@ -18,8 +18,6 @@ import {ContainerModule} from '../../../../@vex/directives/container/container.m
 import {SecondaryToolbarModule} from '../../../../@vex/components/secondary-toolbar/secondary-toolbar.module';
 import {MatSelectModule} from '@angular/material/select';
 
-
-
 @NgModule({
     declarations: [PricingComponent],
     imports: [

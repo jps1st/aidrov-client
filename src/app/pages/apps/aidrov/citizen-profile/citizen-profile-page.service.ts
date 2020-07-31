@@ -25,8 +25,17 @@ export class CitizenProfilePageService {
         // });
     }
 
-    setTarget(school: CitizenModel) {
-        this.subject.next(school);
+    async setTarget(documentId: string) {
+        try {
+            const result = (await this.api.customFunction({
+                type: 'CitizenModel',
+                requestType: 'GET',
+                name: 'getUserCitizenRecord'
+            }).toPromise()) as CitizenModel;
+            this.subject.next(result);
+        } catch (e) {
+            console.log(e);
+        }
     }
 
     async save(updates) {

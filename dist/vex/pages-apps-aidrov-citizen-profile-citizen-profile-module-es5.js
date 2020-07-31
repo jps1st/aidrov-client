@@ -1344,7 +1344,7 @@
                 province: [val.address.province, _angular_forms__WEBPACK_IMPORTED_MODULE_9__["Validators"].required],
                 gender: [val.gender, _angular_forms__WEBPACK_IMPORTED_MODULE_9__["Validators"].required],
                 status: [val.civilStatus, _angular_forms__WEBPACK_IMPORTED_MODULE_9__["Validators"].required],
-                birthDate: [null, _angular_forms__WEBPACK_IMPORTED_MODULE_9__["Validators"].required],
+                birthDate: [val.bdate, _angular_forms__WEBPACK_IMPORTED_MODULE_9__["Validators"].required],
                 contact: [val.mobileNumber, _angular_forms__WEBPACK_IMPORTED_MODULE_9__["Validators"].required],
                 email: [val.email],
                 employer: [val.employer],
@@ -1378,9 +1378,9 @@
                       _context3.prev = 0;
                       raw = this.formGroup.getRawValue();
                       this.val.fname = raw.firstName;
-                      this.val.fname = raw.middleName;
-                      this.val.fname = raw.lastName;
-                      this.val.fname = raw.suffix;
+                      this.val.mname = raw.middleName;
+                      this.val.lname = raw.lastName;
+                      this.val.suffix = raw.suffix;
                       this.val.address.streetHouseNo = raw.sreetHouseNo;
                       this.val.address.purok = raw.purok;
                       this.val.address.barangay = raw.baranggay;

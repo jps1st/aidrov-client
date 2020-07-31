@@ -69,7 +69,7 @@ export class EditCitizenProfileComponent implements OnInit {
                 province: [val.address.province, Validators.required],
                 gender: [val.gender, Validators.required],
                 status: [val.civilStatus, Validators.required],
-                birthDate: [null, Validators.required],
+                birthDate: [val.bdate, Validators.required],
                 contact: [val.mobileNumber, Validators.required],
                 email: [val.email],
                 employer: [val.employer],
@@ -94,9 +94,9 @@ export class EditCitizenProfileComponent implements OnInit {
         try {
             const raw = this.formGroup.getRawValue();
             this.val.fname = raw.firstName;
-            this.val.fname = raw.middleName;
-            this.val.fname = raw.lastName;
-            this.val.fname = raw.suffix;
+            this.val.mname = raw.middleName;
+            this.val.lname = raw.lastName;
+            this.val.suffix = raw.suffix;
             this.val.address.streetHouseNo = raw.sreetHouseNo;
             this.val.address.purok = raw.purok;
             this.val.address.barangay = raw.baranggay;

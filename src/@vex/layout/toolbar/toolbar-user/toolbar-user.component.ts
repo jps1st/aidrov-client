@@ -2,6 +2,7 @@ import {ChangeDetectionStrategy, ChangeDetectorRef, Component, OnInit} from '@an
 import {PopoverService} from '../../../components/popover/popover.service';
 import {ToolbarUserDropdownComponent} from './toolbar-user-dropdown/toolbar-user-dropdown.component';
 import icPerson from '@iconify/icons-ic/twotone-person';
+import {ActivatedRoute} from '@angular/router';
 
 @Component({
     selector: 'vex-toolbar-user',
@@ -14,10 +15,12 @@ export class ToolbarUserComponent implements OnInit {
     icPerson = icPerson;
 
     constructor(private popover: PopoverService,
-                private cd: ChangeDetectorRef) {
+                private cd: ChangeDetectorRef, private activatedRoute: ActivatedRoute) {
     }
 
+
     ngOnInit() {
+      
     }
 
     showPopover(originRef: HTMLElement) {

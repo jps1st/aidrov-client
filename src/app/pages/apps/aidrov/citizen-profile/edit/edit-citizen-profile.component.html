@@ -37,9 +37,9 @@
                 </div>
 
                 <div fxLayout="column" fxLayout.gt-xs="row" fxLayoutGap="8px" fxLayoutGap.gt-xs="24px">
-                    <mat-form-field appearance="standard" class="flex-auto" required>
+                    <mat-form-field appearance="standard" class="flex-auto" >
                         <mat-label>Gender</mat-label>
-                        <mat-select formControlName="gender">
+                        <mat-select formControlName="gender" required>
                             <mat-option value="Male">Male</mat-option>
                             <mat-option value="Female">Female</mat-option>
                             <mat-option value="LGBTQ+">LGBTQ+</mat-option>
@@ -72,7 +72,7 @@
                 <div fxLayout="column" fxLayout.gt-xs="row" fxLayoutGap="8px" fxLayoutGap.gt-xs="24px">
                     <mat-form-field appearance="standard" fxFlex="auto">
                         <mat-label>Unit No./House No.</mat-label>
-                        <input formControlName="unitHouseNo" matInput required>
+                        <input formControlName="unitHouseNo" matInput>
                     </mat-form-field>
 
                     <mat-form-field appearance="standard" fxFlex="auto">
@@ -133,9 +133,9 @@
                 <mat-divider></mat-divider>
 
                 <div fxLayout="column" fxLayout.gt-xs="row" fxLayoutGap="8px" fxLayoutGap.gt-xs="24px">
-                    <mat-form-field appearance="standard" class="flex-auto" required>
+                    <mat-form-field appearance="standard" class="flex-auto" >
                         <mat-label>Employed</mat-label>
-                        <mat-select formControlName="employed">
+                        <mat-select formControlName="employed" required>
                             <mat-option value="YES">YES</mat-option>
                             <mat-option value="No">NO</mat-option> 
                         </mat-select>

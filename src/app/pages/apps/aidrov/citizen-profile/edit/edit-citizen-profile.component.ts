@@ -15,6 +15,7 @@ import {scaleIn400ms} from '../../../../../../@vex/animations/scale-in.animation
 import {stagger80ms} from '../../../../../../@vex/animations/stagger.animation';
 import {CitizenProfilePageService} from '../citizen-profile-page.service';
 import {CitizenModel} from 'aidrov-models';
+import { formatDate } from '@angular/common';
 
 
 @Component({
@@ -56,13 +57,14 @@ export class EditCitizenProfileComponent implements OnInit {
 
     ngOnInit() {
         this.pageService.subject.subscribe((val: CitizenModel) => {
-            this.val = val;
+            this.val = val; 
+            const formattedBDate = formatDate(val.bdate, 'yyyy-MM-dd', 'en-US');
             this.formGroup = this.fb.group({
                 firstName: [val.fname, Validators.required],
                 middleName: [val.mname, Validators.required],
                 lastName: [val.lname, Validators.required],
                 suffix: [val.suffix],
-                unitHouseNo: [val.unitHouseNo], 
+                unitHouseNo: [val.address.unitHouseNo], 
                 sreetHouseNo: [val.address.streetHouseNo, Validators.required],
                 purok: [val.address.purok, Validators.required],
                 baranggay: [val.address.barangay, Validators.required],
@@ -70,7 +72,7 @@ export class EditCitizenProfileComponent implements OnInit {
                 province: [val.address.province, Validators.required],
                 gender: [val.gender, Validators.required],
                 status: [val.civilStatus, Validators.required],
-                birthDate: [val.bdate, Validators.required],
+                birthDate: [formattedBDate, Validators.required],
                 contact: [val.contact],
                 contactMobile: [val.mobileNumber],
                 contactOffice: [val.contactOffice],
@@ -112,9 +114,9 @@ export class EditCitizenProfileComponent implements OnInit {
             this.val.gender = raw.gender;
             this.val.civilStatus = raw.status;            
             this.val.bdate = (new Date(raw.birthDate)).getTime();
-            this.val.phoneNumber = raw.contact;
+            this.val.contact = raw.contact;
             this.val.mobileNumber = raw.contactMobile;
-            this.val.officeNumber = raw.contactOffice;
+            this.val.contactOffice = raw.contactOffice;
             this.val.email = raw.email;
             this.val.employed = raw.employed;
             this.val.occupation = raw.occupation;

@@ -35,7 +35,7 @@
     "@visurel/iconify-angular": "^0.0.7",
     "aidrov-models": "file:aidrov-models-v1.0.4.tgz",
     "angular-calendar": "0.29.0-beta.3",
-    "apexcharts": "^3.19.0",
+    "apexcharts": "^3.24.0",
     "date-fns": "^2.12.0",
     "highlight.js": "^10.0.0",
     "ladrov": "file:ladrov-v1.0.6.tgz",
